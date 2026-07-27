@@ -24,7 +24,26 @@ This project fulfills all required deliverables for the **Resume Screening Agent
 * Python 3.10+
 * Free Groq API Key (get one instantly at [console.groq.com](https://console.groq.com/))
 
-### 1. Environment Setup
+### 1. Clone the Repository
+First, get the code onto your local machine and navigate into the project directory:
+
+**Step A: Verify Git is Installed**
+You will need Git installed on your computer. If you don't have it, you can download it from [git-scm.com](https://git-scm.com/).
+
+**Step B: Clone the Code**
+Open your computer's terminal (Command Prompt on Windows, or Terminal on Mac/Linux) and run this exact command to download the project:
+```bash
+git clone [https://github.com/MojeshSetty/rooman-ai-resume-agent.git](https://github.com/MojeshSetty/rooman-ai-resume-agent.git)
+cd rooman-ai-resume-agent
+```
+
+Step C: Navigate into the Folder
+Once downloaded, move your terminal into the new project folder by running:
+```
+cd rooman-ai-resume-agent
+```
+
+### 2. Environment Setup
 
 Open your terminal in VS Code and run:
 
@@ -41,7 +60,7 @@ source venv/bin/activate
 
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 
 Install the pinned packages:
 
@@ -50,7 +69,7 @@ pip install -r requirements.txt
 ```
 Note on Dependencies: torch>=2.9.0 and groq>=0.5.0 are configured to prevent system-specific architecture conflicts and httpx version mismatches.
 
-### 3. API Key Configuration
+### 4. API Key Configuration
 
 1.Create a .env file in the root project directory (use .env.example as a template).
 
