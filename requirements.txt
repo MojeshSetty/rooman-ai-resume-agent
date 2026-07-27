@@ -7,3 +7,4 @@ PyMuPDF
 pandas
 rich==13.7.1
 fpdf2==2.7.8
+streamlit
