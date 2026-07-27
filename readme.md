@@ -35,6 +35,7 @@ python -m venv venv
 # Activate virtual environment
 # On Windows (PowerShell):
 .\venv\Scripts\activate
+
 # On macOS / Linux:
 source venv/bin/activate
 
