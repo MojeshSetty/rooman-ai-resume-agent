@@ -1,0 +1,12 @@
+Job Title: Senior AI / Machine Learning Engineer
+
+Required Skills & Experience:
+- 3+ years experience with Python, PyTorch, and NLP / LLMs.
+- Strong understanding of RAG architectures, vector databases, and embeddings.
+- Hands-on experience building and deploying REST APIs using FastAPI or Flask.
+- Proven experience with Docker, Git, and CI/CD pipelines.
+- Bachelor's or Master's degree in Computer Science, AI, or related STEM field.
+
+Nice to Have:
+- Experience fine-tuning open-source LLMs (Llama, Mistral).
+- Cloud deployment experience on AWS or GCP.

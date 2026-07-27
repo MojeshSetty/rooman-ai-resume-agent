@@ -1,0 +1,9 @@
+groq
+python-dotenv==1.0.1
+sentence-transformers==2.5.1
+torch
+scikit-learn
+PyMuPDF
+pandas
+rich==13.7.1
+fpdf2==2.7.8
