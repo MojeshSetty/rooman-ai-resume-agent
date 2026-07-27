@@ -102,6 +102,15 @@ When executed, the agent:
 ![Working Agent Terminal Output](terminal_output_image.png)
 
 ---
+### 🌟 Bonus: Interactive Live Demo
+>Instead of just relying on behind-the-scenes automated unit tests, this project includes a standalone interactive testing script[cite: 252]. This allows evaluators to dynamically test the agent using their own resumes.
+
+**How to run the live demo:**
+1. Execute the following command in your terminal:
+   ```bash
+   python test_agent2.py
+
+---
 ## 🧠 Architecture & Scoring Method
 The agent combines mathematical vector matching with qualitative LLM reasoning:
 ```Plain text
