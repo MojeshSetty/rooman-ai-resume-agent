@@ -79,4 +79,28 @@ When executed, the agent:
 2. Generates a structured CSV export at data/output/ranked_candidates.csv.
 
 ### Output CSV Structure
+![Working Agent Terminal Output](terminal_output_image.png)
 
+---
+## 🧠 Architecture & Scoring Method
+The agent combines mathematical vector matching with qualitative LLM reasoning:
+```Plain text
+[ PDF Resumes ] ──> PyMuPDF Parser ──┐
+                                     ├──> SentenceTransformers (MiniLM-L6-v2) ──> Cosine Similarity (0-100%)
+[ Job Description ] ─────────────────┤
+                                     └──> Groq API (Llama-3.3-70b) ─────────────> JSON Qualitative Rationale
+                                                                                        │
+                                                                                        ▼
+                                                                             [ Ranked Output CSV / CLI ]
+```
+1. Text Extraction: PyMuPDF extracts clean text streams from incoming candidate PDFs.
+2. Quantitative Scoring (NLP Similarity): sentence-transformers (all-MiniLM-L6-v2) generates vector embeddings for both the Job Description and each resume text. Cosine similarity calculates a mathematical match score ($0 - 100\%$).
+3. Qualitative Scoring (LLM Reasoning): The parsed text is sent to the Groq API (llama-3.3-70b-versatile) with a JSON-enforced system prompt. The model evaluates experience context, identifies missing/matched skills, and assigns a qualitative grade.
+4. Data Aggregation: pandas and rich aggregate and format the dual-layer evaluation into exported reports.
+---
+## ⚖️ Tradeoff Notes & Limitations
+> PDF Layout Flattening: Standard plain-text PDF extraction via PyMuPDF strips multi-column layouts and visual formatting. A production system would incorporate Vision-Language Models (VLMs) or OCR, but lightweight text extraction was chosen for execution speed within the 24-hour limit.
+
+> Mitigating Keyword Stuffing: Cosine similarity can be biased toward raw word overlaps. To counter this, the secondary LLM qualitative check evaluates actual job context, reducing the likelihood of keyword-stuffed resumes scoring high.
+
+> Context Length Constraints: Processing entire multi-page resumes directly into the prompt can approach context limits or introduce noise. Future iterations would utilize a chunked RAG workflow for long documents.
