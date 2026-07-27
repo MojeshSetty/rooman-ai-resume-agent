@@ -111,6 +111,17 @@ When executed, the agent:
    python test_agent2.py
 
 ---
+# ☁️ Live Cloud Deployment (Streamlit)
+In addition to the Command Line Interface (CLI) and interactive local script, this project is fully deployed and hosted live on **Streamlit Community Cloud**. 
+
+You can test the application instantly in your browser without installing anything locally:
+👉 **[Access the Live App Here](https://rooman-ai-resume-agent-mojeshsetty.streamlit.app/)** 
+
+### Cloud Features:
+* **Web-Based UI:** Clean, card-based candidate rankings with color-coded qualification badges.
+* **Zero-Setup for Evaluators:** Simply paste your Job Description, upload candidate PDFs, input your Groq API key in the sidebar, and view real-time results.
+  
+---
 ## 🧠 Architecture & Scoring Method
 The agent combines mathematical vector matching with qualitative LLM reasoning:
 ```Plain text
